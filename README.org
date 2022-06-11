@@ -19,7 +19,7 @@ Login to the novnc window as vscode, voila, you will see scimax!
 
 #+begin_src jupyter-python
 import matplotlib.pyplot as plt
-plt.plot([1, 2, 4, 8])
+plt.plot([1, 2, 4, 8, 1])
 
 import time
 print(time.asctime())
@@ -27,9 +27,8 @@ print(time.asctime())
 
 #+RESULTS:
 :RESULTS:
-Matplotlib is building the font cache; this may take a moment.
-Sat Jun 11 13:20:27 2022
-[[file:./.ob-jupyter/c499538394d39a9f6fb8fbc1e729f3914288a18b.png]]
+Sat Jun 11 13:28:02 2022
+[[file:./.ob-jupyter/403c4b3239959c7733cbb4988867f04a82cb798a.png]]
 :END:
 
 
