@@ -27,6 +27,15 @@ print(time.asctime())
 
 #+RESULTS:
 :RESULTS:
-Sat Jun 11 11:35:01 2022
+Matplotlib is building the font cache; this may take a moment.
+Sat Jun 11 13:20:27 2022
 [[file:./.ob-jupyter/c499538394d39a9f6fb8fbc1e729f3914288a18b.png]]
 :END:
+
+
+#+BEGIN_SRC emacs-lisp
+(defun server-ensure-safe-dir (dir) t)
+#+END_SRC
+
+#+RESULTS:
+: server-ensure-safe-dir
