@@ -7,7 +7,7 @@ When you run the codespace, you will get a shell.
 Start scimax by running this command:
 
 #+begin_src shell
-/scimax.sh
+scimax
 #+end_src
 
 Then, navigate to the ports tab of your terminal to open port 6080 in your browser.
@@ -27,7 +27,6 @@ print(time.asctime())
 
 #+RESULTS:
 :RESULTS:
-Matplotlib is building the font cache; this may take a moment.
-Fri Jun 10 17:18:24 2022
+Sat Jun 11 11:35:01 2022
 [[file:./.ob-jupyter/c499538394d39a9f6fb8fbc1e729f3914288a18b.png]]
 :END:
