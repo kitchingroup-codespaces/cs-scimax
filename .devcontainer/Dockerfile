@@ -12,15 +12,22 @@ COPY environment.yml* .devcontainer/noop.txt /tmp/conda-tmp/
 RUN if [ -f "/tmp/conda-tmp/environment.yml" ]; then umask 0002 && /opt/conda/bin/conda env update -n base -f /tmp/conda-tmp/environment.yml; fi \
     && rm -rf /tmp/conda-tmp
 
-# [Optional] Uncomment this section to install additional OS packages.
+# Install emacs and scimax-related packages
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
      && apt-get -y install --no-install-recommends \
      emacs aspell aspell-en \
      ripgrep silversearcher-ag \
-     pandoc
+     pandoc texlive-full
+
+RUN su - vscode -c "tlmgr init-usertree"
      
 RUN wget -O wkhtmltopdf.deb https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.buster_amd64.deb && apt-get -y install ./wkhtmltopdf.deb
 
+RUN bash -c "$(curl -fsSL https://raw.githubusercontent.com/jkitchin/scimax/master/install-scimax-linux.sh)" \
+    && emacs -batch -l /scimax/init.el \  
+    && ln -s /scimax.sh /usr/local/bin/scimax \
+    && chown -R vscode:vscode /scimax 
+    
 COPY .devcontainer/library-scripts/desktop-lite-debian.sh /tmp/library-scripts/
 
 RUN apt-get update && bash /tmp/library-scripts/desktop-lite-debian.sh
